@@ -14,7 +14,7 @@ use crate::types::{Message, parse_raw_message};
 
 type TungsteniteWebsocketConnection = tungstenite::protocol::WebSocket<MaybeTlsStream<TcpStream>>;
 
-const READ_TIMEOUT_DURATION: std::time::Duration = std::time::Duration::from_millis(100);
+const READ_TIMEOUT_DURATION: std::time::Duration = std::time::Duration::from_millis(1);
 
 pub struct WebSocketConnection {
     connection: Arc<Mutex<TungsteniteWebsocketConnection>>,
